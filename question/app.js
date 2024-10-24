@@ -1,7 +1,7 @@
 //基礎編
 //Q1
 let nickname = '半田耕一';
-let age = '29';
+let age = 29;
 
 console.log('私の名前は' + nickname + 'です。年齢は' + age + '歳です。');
 
@@ -40,6 +40,13 @@ console.log(playerList[1].favorites[1]);
 
 //Q5
 console.log((playerList[0].age + playerList[1].age + playerList[2].age) / 3 );
+
+let total = 0;
+for(let i = 0; i < playerList.length; i++) {
+  total += playerList[i].age;
+}
+let averageAge = total / playerList.length;
+console.log(averageAge);
 
 //Q6
 function sayHello() {
@@ -125,10 +132,13 @@ for(let i = 0; i <= 99; i++) {
 }
 console.log(numbers);
 
+let NUMBERS = Array.from({ length: 100}, (_, i) => i);
+console.log(NUMBERS);
+
 //Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
 for(let i = 0; i < mixed.length; i++) {
-  if (!Number.isInteger(mixed[i])) {
+  if (typeof mixed[i] !== 'number') {
     console.log('not number');
   } else if (mixed[i] % 2 === 1) {
     console.log('odd');
